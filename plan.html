@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Plan Your Trip | Pilot</title>
+
+<style>
+body{
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  background:#f7f9fc;
+}
+
+.header-section{
+  padding:80px 0 40px;
+  text-align:center;
+}
+
+.header-section h1{
+  font-weight:bold;
+  color:#1e4fa8;
+}
+
+.trip-box{
+  background:white;
+  padding:35px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.ride-card{
+  background:white;
+  border-radius:12px;
+  padding:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+</style>
+
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black py-3">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/logo.png" alt="Pilot Logo.png" width="44" height="44" />
+        <span class="fs-3">Pilot</span>
+      </a>
+
+   <ul class="navbar-nav ms-4 flex-row gap-5">
+        <li class="nav-item">
+                 <a class="nav-link text-white text-decoration-underline" href="index.html">Home</a>
+      </li>
+     <li class="nav-item"><a class="nav-link text-white" href="index.html#fare">Fare</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="index.html#help">Help</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="index.html#schedule">Schedule</a></li>
+    </ul>
+
+      <div class="ms-auto d-flex align-items-center gap-4">
+           <a class="btn btn-light rounded-pill px-4" href="registration.html">Sign Up</a>
+      </div>
+    </div>
+     </nav>
+
+
+<section class="header-section">
+  <div class="container">
+    <h1>Plan Your Trip</h1>
+    <p class="text-muted">
+      Enter your trip details to estimate your ride and travel options.
+    </p>
+  </div>
+</section>
+
+
+<section class="container pb-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="trip-box">
+
+        <h4 class="mb-4">Trip Planner</h4>
+
+        <form id="tripForm">
+          <div class="mb-3">
+            <label class="form-label">Pickup Location</label>
+            <input type="text" class="form-control" placeholder="Enter pickup location">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Destination</label>
+            <input type="text" class="form-control" placeholder="Enter destination">
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Date</label>
+              <input type="date" class="form-control">
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Time</label>
+              <input type="time" class="form-control">
+            </div>
+          </div>
+
+          <button class="btn btn-primary w-100">Estimate Trip</button>
+        </form>
+
+        <div id="tripResult" class="mt-4 text-center"></div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-light py-5">
+  <div class="container">
+    <h3 class="text-center mb-5">Ride Options</h3>
+
+    <div class="row text-center g-4">
+      <div class="col-md-4">
+        <div class="ride-card">
+          <h5>Economy</h5>
+          <p class="text-muted">Affordable everyday rides</p>
+          <p class="fw-bold">₱120 – ₱180</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="ride-card">
+          <h5>Standard</h5>
+          <p class="text-muted">Comfortable rides for small groups</p>
+          <p class="fw-bold">₱180 – ₱250</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="ride-card">
+          <h5>Premium</h5>
+          <p class="text-muted">Luxury rides with top drivers</p>
+          <p class="fw-bold">₱250 – ₱350</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.getElementById("tripForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  document.getElementById("tripResult").innerHTML =
+    "Estimated Distance: 7 km <br> Estimated Time: 18 minutes <br> Estimated Fare: ₱150 – ₱220";
+});
+</script>
+
+
+<footer class="bg-black text-white mt-0">
+  <div class="container py-4">
+
+    <div class="row">
+    <div class="col-md-4">
+    <h5>
+    <img src="assets/logo.png" alt="Pilot Logo" width="44" height="44">Pilot</h5>
+        <p class="small mb-0">Move Like A Pilot</p>
+        <p class="small mb-0">Through The City.</p>
+      </div>
+
+      <div class="col-md-4">
+        <h5>Navigation</h5>
+        <ul class="list">
+          <li><a href="index.html" class="text-white">Home</a></li>
+          <li><a href="index.html#fare" class="text-white">Fare</a></li>
+          <li><a href="index.html#help" class="text-white">Help</a></li>
+          <li><a href="index.html#schedule" class="text-white">Schedule</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+      <h5>Contact</h5>
+      <p class="small mb-1">pilot@email.com</p>
+      <p class="small">+63 900 000 0000</p>
+      </div>
+
+    </div>
+
+    <hr class="border-light">
+    
+    <div class="text-center small">
+      © 2026 Pilot | Bermudez, Cabading & Tian | 9 Sapphire
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
+
